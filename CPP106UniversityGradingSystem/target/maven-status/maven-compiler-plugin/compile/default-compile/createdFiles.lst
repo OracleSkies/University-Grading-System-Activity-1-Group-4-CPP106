@@ -1,4 +1,5 @@
-com\mycompany\cpp106universitygradingsystem\StudentSignUp$3.class
+com\mycompany\cpp106universitygradingsystem\studentSignUp.class
+com\mycompany\cpp106universitygradingsystem\studentSignUp$3.class
 com\mycompany\cpp106universitygradingsystem\CPP106UniversityGradingSystem.class
 com\mycompany\cpp106universitygradingsystem\ENROLL_WINDOW$1.class
 com\mycompany\cpp106universitygradingsystem\FacultySignUp$4.class
@@ -18,16 +19,15 @@ com\mycompany\cpp106universitygradingsystem\FACULTY_VIEW.class
 com\mycompany\cpp106universitygradingsystem\STUDENT_VIEW$1.class
 com\mycompany\cpp106universitygradingsystem\FacultySignUp$5.class
 com\mycompany\cpp106universitygradingsystem\Login$1.class
-com\mycompany\cpp106universitygradingsystem\StudentSignUp.class
-com\mycompany\cpp106universitygradingsystem\StudentSignUp$2.class
+com\mycompany\cpp106universitygradingsystem\studentSignUp$2.class
 com\mycompany\cpp106universitygradingsystem\FacultySignUp.class
 com\mycompany\cpp106universitygradingsystem\FACULTY_VIEW$1.class
 com\mycompany\cpp106universitygradingsystem\Login.class
 com\mycompany\cpp106universitygradingsystem\FacultySignUp$1.class
-com\mycompany\cpp106universitygradingsystem\StudentSignUp$1.class
+com\mycompany\cpp106universitygradingsystem\studentSignUp$1.class
 com\mycompany\cpp106universitygradingsystem\STUDENT_VIEW$3.class
 com\mycompany\cpp106universitygradingsystem\Start$3.class
 com\mycompany\cpp106universitygradingsystem\FacultyOrStudent$1.class
 com\mycompany\cpp106universitygradingsystem\Login$2.class
-com\mycompany\cpp106universitygradingsystem\StudentSignUp$4.class
+com\mycompany\cpp106universitygradingsystem\studentSignUp$4.class
 com\mycompany\cpp106universitygradingsystem\ENROLL_WINDOW.class
