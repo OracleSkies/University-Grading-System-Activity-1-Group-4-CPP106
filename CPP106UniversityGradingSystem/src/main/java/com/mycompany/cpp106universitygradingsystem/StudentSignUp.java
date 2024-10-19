@@ -42,7 +42,7 @@ public class StudentSignUp extends javax.swing.JFrame {
         Cpass = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         signUpButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        backButton = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         StudentNumber = new javax.swing.JTextField();
@@ -100,10 +100,15 @@ public class StudentSignUp extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(51, 204, 0));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("BACK");
+        backButton.setBackground(new java.awt.Color(51, 204, 0));
+        backButton.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        backButton.setForeground(new java.awt.Color(255, 255, 255));
+        backButton.setText("BACK");
+        backButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backButtonActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 255, 153));
@@ -139,7 +144,7 @@ public class StudentSignUp extends javax.swing.JFrame {
                                 .addComponent(Cpass, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(78, 78, 78)
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -189,7 +194,7 @@ public class StudentSignUp extends javax.swing.JFrame {
                     .addComponent(Cpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(signUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36))
         );
@@ -263,6 +268,13 @@ public class StudentSignUp extends javax.swing.JFrame {
         // Save data to file
         saveToFile(name, studentN , username, password);
     }//GEN-LAST:event_signUpButtonActionPerformed
+
+    private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
+        // TODO add your handling code here:
+        Login signed_up = new Login();
+        setVisible(false);
+        signed_up.setVisible(true);
+    }//GEN-LAST:event_backButtonActionPerformed
     
      private void saveToFile(String name, String studentN, String username, String password) {
         try (var writer = new BufferedWriter(new FileWriter("StudentAccounts.txt", true))) {
@@ -273,13 +285,8 @@ public class StudentSignUp extends javax.swing.JFrame {
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Error saving to file", "Error", JOptionPane.ERROR_MESSAGE);
         }
+     }
     
-    private void signupbuttonactionperformed(java.awt.event.ActionEvent evt){
-        
-         lOGIN signed_up = new lOGIN();
-         setVisible(false);
-         signed_up.setVisible(true);
-    }
     /**
      * @param args the command line arguments
      */
@@ -322,7 +329,7 @@ public class StudentSignUp extends javax.swing.JFrame {
     private javax.swing.JTextField Password;
     private javax.swing.JTextField StudentNumber;
     private javax.swing.JTextField UserName;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton backButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
