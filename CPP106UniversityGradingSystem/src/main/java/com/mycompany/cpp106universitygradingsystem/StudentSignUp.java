@@ -273,8 +273,12 @@ public class StudentSignUp extends javax.swing.JFrame {
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Error saving to file", "Error", JOptionPane.ERROR_MESSAGE);
         }
-
-
+    
+    private void signupbuttonactionperformed(java.awt.event.ActionEvent evt){
+        
+         lOGIN signed_up = new lOGIN();
+         setVisible(false);
+         signed_up.setVisible(true);
     }
     /**
      * @param args the command line arguments

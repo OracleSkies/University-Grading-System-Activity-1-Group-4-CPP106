@@ -42,7 +42,7 @@ public class FacultySignUp extends javax.swing.JFrame {
         CourseC = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         signUpButton = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        backaction = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         UserName = new javax.swing.JTextField();
@@ -102,10 +102,15 @@ public class FacultySignUp extends javax.swing.JFrame {
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(51, 204, 0));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setText("BACK");
+        backaction.setBackground(new java.awt.Color(51, 204, 0));
+        backaction.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        backaction.setForeground(new java.awt.Color(255, 255, 255));
+        backaction.setText("BACK");
+        backaction.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backactionActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(51, 255, 153));
@@ -145,7 +150,7 @@ public class FacultySignUp extends javax.swing.JFrame {
                         .addGap(73, 73, 73)
                         .addComponent(signUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(78, 78, 78)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(backaction, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(58, 58, 58)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,7 +219,7 @@ public class FacultySignUp extends javax.swing.JFrame {
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(backaction, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(signUpButton, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(36, 36, 36))
         );
@@ -303,6 +308,18 @@ public class FacultySignUp extends javax.swing.JFrame {
     
     }//GEN-LAST:event_signUpButtonActionPerformed
 
+    private void backactionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backactionActionPerformed
+        // TODO add your handling code here:
+         FacultyOrStudent back_dunk = new FacultyOrStudent();
+         setVisible(false);
+         back_dunk.setVisible(true);
+    }//GEN-LAST:event_backactionActionPerformed
+    private void signUpButtonAction(java.awt.event.ActionEvent evt) {
+        
+         lOGIN signed_up = new lOGIN();
+         setVisible(false);
+         signed_up.setVisible(true);
+    }
     /**
      * @param args the command line arguments
      */
@@ -349,7 +366,7 @@ public class FacultySignUp extends javax.swing.JFrame {
     private javax.swing.JTextField Name;
     private javax.swing.JTextField Pass;
     private javax.swing.JTextField UserName;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton backaction;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
