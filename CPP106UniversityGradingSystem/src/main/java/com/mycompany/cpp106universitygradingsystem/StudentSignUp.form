@@ -103,11 +103,15 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                                       <Component id="Cpass" min="-2" pref="222" max="-2" attributes="0"/>
 =======
                                       <Component id="CPASS_button" min="-2" pref="222" max="-2" attributes="0"/>
 >>>>>>> Stashed changes
+=======
+                                      <Component id="jTextField3" min="-2" pref="222" max="-2" attributes="0"/>
+>>>>>>> parent of 45100ed (pa check ulit if gagana)
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
@@ -118,38 +122,54 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel6" min="-2" pref="144" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                               <Component id="Password" min="-2" pref="222" max="-2" attributes="0"/>
 =======
                               <Component id="Pass_Button" min="-2" pref="222" max="-2" attributes="0"/>
 >>>>>>> Stashed changes
+=======
+                              <Component id="jTextField2" min="-2" pref="222" max="-2" attributes="0"/>
+>>>>>>> parent of 45100ed (pa check ulit if gagana)
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel2" min="-2" pref="144" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                               <Component id="UserName" min="-2" pref="222" max="-2" attributes="0"/>
 =======
                               <Component id="UserNameButton" min="-2" pref="222" max="-2" attributes="0"/>
 >>>>>>> Stashed changes
+=======
+                              <Component id="jTextField5" min="-2" pref="222" max="-2" attributes="0"/>
+>>>>>>> parent of 45100ed (pa check ulit if gagana)
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel4" min="-2" pref="144" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                               <Component id="StudentNumber" min="-2" pref="222" max="-2" attributes="0"/>
 =======
                               <Component id="StudentNum_button" min="-2" pref="222" max="-2" attributes="0"/>
 >>>>>>> Stashed changes
+=======
+                              <Component id="jTextField4" min="-2" pref="222" max="-2" attributes="0"/>
+>>>>>>> parent of 45100ed (pa check ulit if gagana)
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel5" min="-2" pref="144" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                               <Component id="Name" min="-2" pref="222" max="-2" attributes="0"/>
 =======
                               <Component id="Name_button" min="-2" pref="222" max="-2" attributes="0"/>
 >>>>>>> Stashed changes
+=======
+                              <Component id="jTextField1" min="-2" pref="222" max="-2" attributes="0"/>
+>>>>>>> parent of 45100ed (pa check ulit if gagana)
                           </Group>
                       </Group>
                       <EmptySpace pref="75" max="32767" attributes="0"/>
@@ -169,6 +189,7 @@
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel5" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                           <Component id="Name" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -182,34 +203,53 @@
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="StudentNum_button" alignment="3" min="-2" max="-2" attributes="0"/>
 >>>>>>> Stashed changes
+=======
+                          <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> parent of 45100ed (pa check ulit if gagana)
                           <Component id="jLabel4" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                           <Component id="UserName" alignment="3" min="-2" max="-2" attributes="0"/>
 =======
                           <Component id="UserNameButton" alignment="3" min="-2" max="-2" attributes="0"/>
 >>>>>>> Stashed changes
+=======
+                          <Component id="jTextField5" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> parent of 45100ed (pa check ulit if gagana)
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel6" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                           <Component id="Password" alignment="3" min="-2" max="-2" attributes="0"/>
 =======
                           <Component id="Pass_Button" alignment="3" min="-2" max="-2" attributes="0"/>
 >>>>>>> Stashed changes
+=======
+                          <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> parent of 45100ed (pa check ulit if gagana)
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel7" alignment="3" min="-2" pref="33" max="-2" attributes="0"/>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                           <Component id="Cpass" alignment="3" min="-2" max="-2" attributes="0"/>
 =======
                           <Component id="CPASS_button" alignment="3" min="-2" max="-2" attributes="0"/>
 >>>>>>> Stashed changes
+=======
+                          <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
+>>>>>>> parent of 45100ed (pa check ulit if gagana)
                       </Group>
                       <EmptySpace pref="61" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -255,24 +295,33 @@
                 <Property name="text" type="java.lang.String" value="Confirm Password:"/>
               </Properties>
             </Component>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             <Component class="javax.swing.JTextField" name="Name">
+=======
+            <Component class="javax.swing.JTextField" name="jTextField1">
+>>>>>>> parent of 45100ed (pa check ulit if gagana)
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="0"/>
                 </Property>
               </Properties>
             </Component>
+<<<<<<< HEAD
             <Component class="javax.swing.JTextField" name="Password">
 =======
             <Component class="javax.swing.JTextField" name="Name_button">
 >>>>>>> Stashed changes
+=======
+            <Component class="javax.swing.JTextField" name="jTextField2">
+>>>>>>> parent of 45100ed (pa check ulit if gagana)
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="0"/>
                 </Property>
               </Properties>
               <Events>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PasswordActionPerformed"/>
               </Events>
@@ -284,12 +333,19 @@
             </Component>
             <Component class="javax.swing.JTextField" name="Pass_Button">
 >>>>>>> Stashed changes
+=======
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField2ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JTextField" name="jTextField3">
+>>>>>>> parent of 45100ed (pa check ulit if gagana)
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="0"/>
                 </Property>
               </Properties>
               <Events>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CpassActionPerformed"/>
 =======
@@ -305,6 +361,9 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CPASS_buttonActionPerformed"/>
 >>>>>>> Stashed changes
+=======
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>
+>>>>>>> parent of 45100ed (pa check ulit if gagana)
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
@@ -331,6 +390,7 @@
                 </Property>
                 <Property name="text" type="java.lang.String" value="SIGNUP"/>
               </Properties>
+<<<<<<< HEAD
               <Events>
 <<<<<<< Updated upstream
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
@@ -338,6 +398,8 @@
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SignupButtonActionPerformed"/>
 >>>>>>> Stashed changes
               </Events>
+=======
+>>>>>>> parent of 45100ed (pa check ulit if gagana)
             </Component>
             <Component class="javax.swing.JButton" name="BackButton">
               <Properties>
@@ -378,33 +440,45 @@
                 <Property name="text" type="java.lang.String" value="Name:"/>
               </Properties>
             </Component>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             <Component class="javax.swing.JTextField" name="StudentNumber">
 =======
             <Component class="javax.swing.JTextField" name="StudentNum_button">
 >>>>>>> Stashed changes
+=======
+            <Component class="javax.swing.JTextField" name="jTextField4">
+>>>>>>> parent of 45100ed (pa check ulit if gagana)
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="0"/>
                 </Property>
               </Properties>
             </Component>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
             <Component class="javax.swing.JTextField" name="UserName">
 =======
             <Component class="javax.swing.JTextField" name="UserNameButton">
 >>>>>>> Stashed changes
+=======
+            <Component class="javax.swing.JTextField" name="jTextField5">
+>>>>>>> parent of 45100ed (pa check ulit if gagana)
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="0"/>
                 </Property>
               </Properties>
               <Events>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UserNameActionPerformed"/>
 =======
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UserNameButtonActionPerformed"/>
 >>>>>>> Stashed changes
+=======
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField5ActionPerformed"/>
+>>>>>>> parent of 45100ed (pa check ulit if gagana)
               </Events>
             </Component>
           </SubComponents>
