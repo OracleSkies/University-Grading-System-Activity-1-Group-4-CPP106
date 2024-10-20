@@ -29,7 +29,7 @@ public class ENROLL_WINDOW extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        Enroll = new javax.swing.JButton();
         back_action = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -42,12 +42,12 @@ public class ENROLL_WINDOW extends javax.swing.JFrame {
 
         jTextField1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
 
-        jButton1.setBackground(new java.awt.Color(0, 255, 0));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton1.setText("ENROLL");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Enroll.setBackground(new java.awt.Color(0, 255, 0));
+        Enroll.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        Enroll.setText("ENROLL");
+        Enroll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                EnrollActionPerformed(evt);
             }
         });
 
@@ -78,7 +78,7 @@ public class ENROLL_WINDOW extends javax.swing.JFrame {
                 .addGap(30, 30, 30)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Enroll, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(30, 30, 30))
         );
         jPanel1Layout.setVerticalGroup(
@@ -89,7 +89,7 @@ public class ENROLL_WINDOW extends javax.swing.JFrame {
                 .addGap(35, 35, 35)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
+                    .addComponent(Enroll, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
                 .addComponent(back_action, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -110,15 +110,18 @@ public class ENROLL_WINDOW extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void EnrollActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EnrollActionPerformed
         // TODO add your handling code here:
          StudentGradeView add_course = new StudentGradeView();
          setVisible(false);
          add_course.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_EnrollActionPerformed
 
     private void back_actionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_back_actionActionPerformed
         // TODO add your handling code here:
+         StudentGradeView add_course = new StudentGradeView();
+         setVisible(false);
+         add_course.setVisible(true);
     }//GEN-LAST:event_back_actionActionPerformed
 
     /**
@@ -157,8 +160,8 @@ public class ENROLL_WINDOW extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Enroll;
     private javax.swing.JButton back_action;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;

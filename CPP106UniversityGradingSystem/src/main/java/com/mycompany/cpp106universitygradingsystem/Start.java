@@ -85,9 +85,6 @@ public class Start extends javax.swing.JFrame {
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
-        iconlabel.setIcon(new javax.swing.ImageIcon("C:\\Users\\donas\\GitHub\\University-Grading-System-Activity-1-Group-4-CPP106\\CPP106UniversityGradingSystem\\src\\firewatch WP.jpg")); // NOI18N
-        iconlabel.setText("jLabel3");
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
