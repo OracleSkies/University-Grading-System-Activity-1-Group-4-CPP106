@@ -123,7 +123,6 @@ public class FacultyGradeView extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 102, 204));
 
         jComboBox1.setBackground(new java.awt.Color(51, 204, 0));
-        jComboBox1.setEditable(true);
         jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PRELIM", "MIDTERM", "FINALS" }));
@@ -303,7 +302,7 @@ public class FacultyGradeView extends javax.swing.JFrame {
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
-         lOGIN back_press = new lOGIN();
+         Login back_press = new Login();
          setVisible(false);
          back_press.setVisible(true);
     }//GEN-LAST:event_backButtonActionPerformed
