@@ -17,47 +17,43 @@ import javax.swing.table.DefaultTableModel;
 public class StudentGradeView extends javax.swing.JFrame {
     
     private String studentName; // Variable to store the student's name
-    public final String getName(){
+
+    public String getStudentName() {
         return studentName;
     }
-    public void setName(String name){
-        this.studentName = name;
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
     }
-    /**
-     * Creates new form STUDENT_VIEW
-     */
-    
-    public StudentGradeView() {
-        //this.studentName = studentName; // Assign the student's name
+
+    public StudentGradeView(String studentName) {
+        this.studentName = studentName; // Assign the student's name passed from constructor
         initComponents();
-        System.out.println(this.getName());
-        loadStudentData("grades.txt", this.getName()); // Load the student's data
-        jLabel5.setText("Name: " + this.getName()); // Display the student's name in the label
-        
+        jLabel5.setText("Name: " + studentName); // Display student's name
+        loadStudentData("grades.txt", studentName); // Load student data from file
     }
-    
+
     private void loadStudentData(String filename, String studentName) {
-        DefaultTableModel model = (DefaultTableModel) StudentView.getModel();
-        model.setRowCount(0); // Clear existing data
-    
-        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                String[] data = line.split(","); // Split by comma
-                if (data[0].trim().equalsIgnoreCase(studentName)) { // Check student name
-                    Object[] row = new Object[data.length]; // Create a row for the table
-                    row[0] = data[0]; // Name
-                    for (int i = 1; i < data.length; i++) {
-                        row[i] = data[i].trim(); // Other grades
-                    }
-                    model.addRow(row); // Add the row to the table
-                    break; // Stop searching after finding the student
+    DefaultTableModel model = (DefaultTableModel) StudentView.getModel();
+    model.setRowCount(0); // Clear existing data
+
+    try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+        String line;
+        while ((line = br.readLine()) != null) {
+            String[] data = line.split(","); // Split by comma
+            if (data[0].trim().equalsIgnoreCase(studentName)) { // Check student name
+                Object[] row = new Object[data.length - 1]; // Create a row to hold course and grades
+                row[0] = data[1]; // Course name (skip student's name)
+                for (int i = 2; i < data.length; i++) { // Add grades to row
+                    row[i - 1] = data[i].trim(); // Grades
                 }
+                model.addRow(row); // Add the row to the table
             }
-        } catch (IOException e) {
-            JOptionPane.showMessageDialog(this, "Error loading student data: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
+    } catch (IOException e) {
+        JOptionPane.showMessageDialog(this, "Error loading student data: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     }
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -226,7 +222,7 @@ public class StudentGradeView extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new StudentGradeView().setVisible(true);
+                new StudentGradeView("studentName").setVisible(true);
             }
         });
     }
