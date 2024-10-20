@@ -252,7 +252,13 @@ public class StudentSignUp extends javax.swing.JFrame {
             return;
         }
         
-        if (name.isEmpty() && studentN.isEmpty() && username.isEmpty() && password.isEmpty() && confirmPassword.isEmpty()){
+        if (studentN != null){
+            JOptionPane.showMessageDialog(this,"StudentNumber is not an integer","Error",JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        
+        if (name.isEmpty() || studentN.isEmpty() || username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()){
             
             JOptionPane.showMessageDialog(this,"Unable to signup due to an empty field","Input Error", JOptionPane.ERROR_MESSAGE);
             return;

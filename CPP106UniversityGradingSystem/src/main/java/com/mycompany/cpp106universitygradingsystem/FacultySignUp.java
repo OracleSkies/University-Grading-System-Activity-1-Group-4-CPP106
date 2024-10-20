@@ -276,7 +276,7 @@ public class FacultySignUp extends javax.swing.JFrame {
             return;
         }
         
-        if (name.isEmpty() && courseCode.isEmpty() && username.isEmpty() && password.isEmpty() && confirmPassword.isEmpty() && courseName.isEmpty()){
+        if (name.isEmpty() || courseCode.isEmpty() || username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty() || courseName.isEmpty()){
             
             JOptionPane.showMessageDialog(this,"Unable to signup due to an empty field","Input Error", JOptionPane.ERROR_MESSAGE);
             return;
