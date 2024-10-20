@@ -46,33 +46,11 @@ public class FacultyGradeView extends javax.swing.JFrame {
     }
     
     private void initializeTable() {
+        // Set up the table model with 6 columns
         String[] columnNames = {"Student Name", "Quiz", "Activity", "Performance Task", "Exam", "Final Grade"};
-        tableModel = new DefaultTableModel(columnNames, 20);
+        tableModel = new DefaultTableModel(columnNames, 20); // 20 rows
         jTable1.setModel(tableModel);
-
-        tableModel.addTableModelListener(e -> {
-            if (e.getColumn() >= 1 && e.getColumn() <= 4) { // Only listen to specific columns
-                int row = e.getFirstRow();
-                computeFinalGrade(row);
-            }
-        });
     }
-
-    private void computeFinalGrade(int row) {
-    try {
-        double quiz = Double.parseDouble((String) tableModel.getValueAt(row, 1));
-        double activity = Double.parseDouble((String) tableModel.getValueAt(row, 2));
-        double performanceTask = Double.parseDouble((String) tableModel.getValueAt(row, 3));
-        double exam = Double.parseDouble((String) tableModel.getValueAt(row, 4));
-
-        // Calculate final grade based on weights
-        double finalGrade = (quiz * 0.2) + (activity * 0.3) + (performanceTask * 0.3) + (exam * 0.2);
-        tableModel.setValueAt(String.format("%.2f", finalGrade), row, 5); // Update Final Grade
-    } catch (NumberFormatException e) {
-        JOptionPane.showMessageDialog(this, "Invalid input! Please enter numeric values.", "Input Error", JOptionPane.ERROR_MESSAGE);
-        tableModel.setValueAt("", row, 5); // Clear the final grade cell
-    }
-}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -130,6 +108,7 @@ public class FacultyGradeView extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         backButton = new javax.swing.JButton();
         SaveButton1 = new javax.swing.JButton();
+        ComputeButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -261,6 +240,13 @@ public class FacultyGradeView extends javax.swing.JFrame {
             }
         });
 
+        ComputeButton2.setText("compute");
+        ComputeButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComputeButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -277,6 +263,8 @@ public class FacultyGradeView extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(198, 198, 198)
                         .addComponent(SaveButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(85, 85, 85)
+                        .addComponent(ComputeButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(127, Short.MAX_VALUE))
@@ -286,12 +274,13 @@ public class FacultyGradeView extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(36, 36, 36)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 57, Short.MAX_VALUE)
+                .addGap(57, 57, 57)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(SaveButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(SaveButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(ComputeButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(69, 69, 69))
         );
 
@@ -319,9 +308,33 @@ public class FacultyGradeView extends javax.swing.JFrame {
          back_press.setVisible(true);
     }//GEN-LAST:event_backButtonActionPerformed
 
+    private void ComputeButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComputeButton2ActionPerformed
+        // Iterate through each row of the table
+       for (int row = 0; row < tableModel.getRowCount(); row++) {
+        try {
+            // Retrieve the values for Quiz, Activity, Performance Task, and Exam
+            double quiz = Double.parseDouble((String) tableModel.getValueAt(row, 1));
+            double activity = Double.parseDouble((String) tableModel.getValueAt(row, 2));
+            double performanceTask = Double.parseDouble((String) tableModel.getValueAt(row, 3));
+            double exam = Double.parseDouble((String) tableModel.getValueAt(row, 4));
+
+            // Calculate the final grade
+            double finalGrade = (quiz + activity + performanceTask + exam) / 4;
+
+            // Set the final grade in the table model
+            tableModel.setValueAt(String.format("%.2f", finalGrade), row, 5); // Set the final grade
+        } catch (NumberFormatException e) {
+            // Handle the case where input is not a valid number
+            tableModel.setValueAt("Invalid", row, 5); // Set "Invalid" if there's an error in parsing
+        }
+    }
+    JOptionPane.showMessageDialog(this, "Final grades computed successfully!", "Success", JOptionPane.INFORMATION_MESSAGE);
+ 
+    }//GEN-LAST:event_ComputeButton2ActionPerformed
+
     private void SaveButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButton1ActionPerformed
-        // Save the data from the table to the file
-        saveDataToFile();
+        saveDataToFile();// Call the saveDataToFile method to save the table data
+
     }//GEN-LAST:event_SaveButton1ActionPerformed
 
     /**
@@ -363,6 +376,7 @@ public class FacultyGradeView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ComputeButton2;
     private javax.swing.JButton SaveButton1;
     private javax.swing.JButton backButton;
     private javax.swing.JComboBox<String> jComboBox1;
