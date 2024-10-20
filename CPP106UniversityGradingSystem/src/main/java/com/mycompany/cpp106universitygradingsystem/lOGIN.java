@@ -7,6 +7,7 @@ package com.mycompany.cpp106universitygradingsystem;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 
 /**
@@ -209,21 +210,44 @@ public class Login extends javax.swing.JFrame {
 //            while(line != null){
 //                String[] parts = line.split(",");
 //                if(parts[0].equals(username) && parts[1].equals(password)){
-//                    JOptionPane.showMessageDialog(null, "Login Successful");
+//                    System.out.println("Logged IN");
+//                    
+////                    JOptionPane.showMessageDialog(null, "Login Successful");
 //                    return;
 //                }
 //            }
-//            JOptionPane.showMessageDialog(null, "Invalid Account");
+//            System.out.println("Invalid Account");
+//            //JOptionPane.showMessageDialog(null, "Invalid Account");
 //        } catch (Exception e) {
 //            // TODO: handle exception
-//            JOptionPane.showMessageDialog(null, "Error from file");
+//            System.out.println("Error in file");
+//            //JOptionPane.showMessageDialog(null, "Error from file");
 //        }
-        File file = new File("StudentAccount.txt");
-        if (file.exists()){
-            System.out.println(username + " " + password);
-        } else {
-            System.out.println("May Maliii");
-        }
+          try (BufferedReader reader = new BufferedReader(new FileReader("StudentAccounts.txt"))){
+              String line;
+              line = reader.readLine();
+              while (line != null){
+                  String[] parts = line.split(",");
+                  if(parts[0].equals(username) && parts[1].equals(password)){
+                      System.out.println("Logged in");
+                      break;
+                  }
+                  System.out.println("loopcheck");
+                  System.out.println("Invalid Account");
+                  break;
+              }
+          } catch (IOException e) {
+              System.out.println("error");
+          }
+
+
+
+//        File file = new File("StudentAccounts.txt");
+//        if (file.exists()){
+//            System.out.println(username + " " + password);
+//        } else {
+//            System.out.println("May Maliii");
+//        }
     }
     /**
      * @param args the command line arguments
