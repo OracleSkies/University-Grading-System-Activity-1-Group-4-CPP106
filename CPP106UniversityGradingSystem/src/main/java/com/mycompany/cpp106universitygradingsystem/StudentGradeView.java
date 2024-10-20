@@ -9,7 +9,8 @@ package com.mycompany.cpp106universitygradingsystem;
  * @author Student
  */
 public class StudentGradeView extends javax.swing.JFrame {
-
+    
+    
     /**
      * Creates new form STUDENT_VIEW
      */
