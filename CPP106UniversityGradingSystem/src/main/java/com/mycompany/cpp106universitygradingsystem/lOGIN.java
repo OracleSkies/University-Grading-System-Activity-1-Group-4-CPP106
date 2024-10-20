@@ -207,18 +207,34 @@ public class Login extends javax.swing.JFrame {
 
           try (BufferedReader reader = new BufferedReader(new FileReader("Accounts.txt"))){
               String line;
+              boolean accountFound = false;
               while ((line = reader.readLine()) != null){
-                  System.out.println(line);
                   String[] parts = line.split(",");
                   if(parts[0].equals(username) && parts[1].equals(password)){
-                      System.out.println("Logged in");
-                      System.out.println(parts[2]);
-                      break;
-                  } else{
-                      System.out.println("Invalid Account");
-                  }
-                  
+                      accountFound = true;
+                      switch (parts[2]){
+                          case "Student" -> {
+                          //show student view
+                            StudentGradeView studentView = new StudentGradeView();
+                            setVisible(false);
+                            studentView.setVisible(true);
+                          }
+                          case "Faculty" -> {
+                          //show faculty view
+                            FacultyGradeView facultyView = new FacultyGradeView();
+                            setVisible(false);
+                            facultyView.setVisible(true);
+                          }
+                          default ->{
+                            JOptionPane.showMessageDialog(this, "Invalid Account", "Error", JOptionPane.ERROR_MESSAGE);
+                          }
+                        }
+                     break;
+                    }
                 }
+              if (!accountFound){
+                JOptionPane.showMessageDialog(this, "Invalid Account", "Error", JOptionPane.ERROR_MESSAGE);
+              }
           } catch (IOException e) {
               System.out.println("error");
           }
