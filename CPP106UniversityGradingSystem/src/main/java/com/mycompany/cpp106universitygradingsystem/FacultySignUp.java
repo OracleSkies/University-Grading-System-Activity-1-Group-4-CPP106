@@ -286,10 +286,9 @@ public class FacultySignUp extends javax.swing.JFrame {
         saveToFile(name, username, password, courseCode, courseName);
     }
     private void saveToFile(String name, String username, String password, String courseCode, String courseName) {
-        try (var writer = new BufferedWriter(new FileWriter("FacultyAccounts.txt", true))) {
-            writer.write(name + "," + username + "," + password + "," + courseCode + "," + courseName);
-
-
+        try (var writer = new BufferedWriter(new FileWriter("Accounts.txt", true))) {
+            writer.write(username + "," + password  + "," + "Faculty" + "," +  courseCode + "," + courseName  + "," + name);
+            writer.newLine();
             JOptionPane.showMessageDialog(this, "Account created successfully!");
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Error saving to file", "Error", JOptionPane.ERROR_MESSAGE);
@@ -299,13 +298,13 @@ public class FacultySignUp extends javax.swing.JFrame {
 
     private void backactionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backactionActionPerformed
         // TODO add your handling code here:
-         lOGIN back_dunk = new lOGIN();
+         Login back_dunk = new Login();
          setVisible(false);
          back_dunk.setVisible(true);
     }//GEN-LAST:event_backactionActionPerformed
     private void signUpButtonAction(java.awt.event.ActionEvent evt) {
         
-         lOGIN signed_up = new lOGIN();
+         Login signed_up = new Login();
          setVisible(false);
          signed_up.setVisible(true);
     }

@@ -279,7 +279,7 @@ public class StudentSignUp extends javax.swing.JFrame {
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
-        lOGIN signed_up = new lOGIN();
+        Login signed_up = new Login();
         setVisible(false);
         signed_up.setVisible(true);
     }//GEN-LAST:event_backButtonActionPerformed
@@ -289,10 +289,9 @@ public class StudentSignUp extends javax.swing.JFrame {
     }//GEN-LAST:event_confirmPasswordFieldActionPerformed
     
      private void saveToFile(String name, String studentN, String username, String password) {
-        try (var writer = new BufferedWriter(new FileWriter("StudentAccounts.txt", true))) {
-            writer.write(name + "," + studentN + "," + username + "," + password);
-
-
+        try (var writer = new BufferedWriter(new FileWriter("Accounts.txt", true))) {
+            writer.write(username + "," + password  + "," + "Student" + "," + studentN   + "," + name);
+            writer.newLine();
             JOptionPane.showMessageDialog(this, "Account created successfully!");
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Error saving to file", "Error", JOptionPane.ERROR_MESSAGE);
