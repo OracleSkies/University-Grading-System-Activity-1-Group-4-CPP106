@@ -59,7 +59,6 @@ public class FacultyGradeView extends javax.swing.JFrame {
      */
     
     private void loadDataFromFile() {
-        //loads file that exist
         try (BufferedReader br = new BufferedReader(new FileReader("grades.txt"))) {
             String line;
             int row = 0;
@@ -76,7 +75,6 @@ public class FacultyGradeView extends javax.swing.JFrame {
     }
 
     private void saveDataToFile() {
-        //saves the data of the table  to the exisitng txt file
         try (BufferedWriter bw = new BufferedWriter(new FileWriter("grades.txt"))) {
             for (int row = 0; row < tableModel.getRowCount(); row++) {
                 StringBuilder sb = new StringBuilder();
@@ -308,7 +306,6 @@ public class FacultyGradeView extends javax.swing.JFrame {
          lOGIN back_press = new lOGIN();
          setVisible(false);
          back_press.setVisible(true);
-         dispose();
     }//GEN-LAST:event_backButtonActionPerformed
 
     private void ComputeButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComputeButton2ActionPerformed
