@@ -333,8 +333,7 @@ public class FacultyGradeView extends javax.swing.JFrame {
     }//GEN-LAST:event_ComputeButton2ActionPerformed
 
     private void SaveButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButton1ActionPerformed
-        saveDataToFile();// Call the saveDataToFile method to save the table data
-
+        saveDataToFile();
     }//GEN-LAST:event_SaveButton1ActionPerformed
 
     /**
