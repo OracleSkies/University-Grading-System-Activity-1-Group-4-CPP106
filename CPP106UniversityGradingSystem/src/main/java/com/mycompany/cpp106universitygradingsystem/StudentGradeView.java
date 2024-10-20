@@ -4,20 +4,53 @@
  */
 package com.mycompany.cpp106universitygradingsystem;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
+
 /**
  *
  * @author Student
  */
 public class StudentGradeView extends javax.swing.JFrame {
     
-    
+    private String studentName; // Variable to store the student's name
     /**
      * Creates new form STUDENT_VIEW
      */
-    public StudentGradeView() {
+    
+    public StudentGradeView(String studentName) {
+        this.studentName = studentName; // Assign the student's name
         initComponents();
+        loadStudentData("grades.txt", studentName); // Load the student's data
+        jLabel5.setText("Name: " + studentName); // Display the student's name in the label
     }
-
+    
+    private void loadStudentData(String filename, String studentName) {
+        DefaultTableModel model = (DefaultTableModel) StudentView.getModel();
+        model.setRowCount(0); // Clear existing data
+        
+        try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
+            String line;
+            while ((line = br.readLine()) != null) {
+                String[] data = line.split(","); // Split by comma
+                if (data[0].trim().equalsIgnoreCase(studentName)) { // Check student name
+                    Object[] row = new Object[data.length]; // Create a row for the table
+                    row[0] = data[0]; // Name
+                    for (int i = 1; i < data.length; i++) {
+                        row[i] = data[i].trim(); // Other grades
+                    }
+                    model.addRow(row); // Add the row to the table
+                    break; // Stop searching after finding the student
+                }
+            }
+        } catch (IOException e) {
+            JOptionPane.showMessageDialog(this, "Error loading student data: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -31,8 +64,7 @@ public class StudentGradeView extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        StudentView = new javax.swing.JTable();
         enroll_course = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         backButton = new javax.swing.JButton();
@@ -50,44 +82,25 @@ public class StudentGradeView extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(0, 102, 204));
         jPanel2.setForeground(new java.awt.Color(255, 0, 0));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        StudentView.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"COURSE 1", null, null, null, null, null},
-                {"COURSE 2", null, null, null, null, null},
-                {"COURSE 3", null, null, null, null, null}
+
             },
             new String [] {
-                "COURSE", "QUIZZES", "ACTIVITIES", "PERFORMANCE TASK", "EXAM", "FINAL GRADE"
+                "Course", "Quizzes", "Activity", "Performance task", "Exam", "Final Grade"
             }
         ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Float.class
-            };
             boolean[] canEdit = new boolean [] {
-                true, false, false, false, false, false
+                false, false, false, false, false, false
             };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jTable2.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
-        jTable2.setRowHeight(100);
-        jScrollPane2.setViewportView(jTable2);
-
-        jComboBox1.setBackground(new java.awt.Color(51, 204, 0));
-        jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PRELIM", "MIDTERM", "FINALS" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
-            }
-        });
+        StudentView.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_ALL_COLUMNS);
+        StudentView.setRowHeight(100);
+        jScrollPane2.setViewportView(StudentView);
 
         enroll_course.setBackground(new java.awt.Color(51, 204, 0));
         enroll_course.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -111,11 +124,8 @@ public class StudentGradeView extends javax.swing.JFrame {
                 .addGap(60, 60, 60)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(enroll_course, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(enroll_course, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1378, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(60, Short.MAX_VALUE))
         );
@@ -125,9 +135,7 @@ public class StudentGradeView extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(enroll_course, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addComponent(enroll_course)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(126, Short.MAX_VALUE))
@@ -187,11 +195,7 @@ public class StudentGradeView extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
-
+            
     private void enroll_courseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enroll_courseActionPerformed
         // TODO add your handling code here:
          ENROLL_WINDOW course_enroll = new ENROLL_WINDOW();
@@ -243,14 +247,13 @@ public class StudentGradeView extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable StudentView;
     private javax.swing.JButton backButton;
     private javax.swing.JButton enroll_course;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable2;
     // End of variables declaration//GEN-END:variables
 }
