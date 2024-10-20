@@ -287,14 +287,13 @@ public class FacultySignUp extends javax.swing.JFrame {
     }
     private void saveToFile(String name, String username, String password, String courseCode, String courseName) {
         try (var writer = new BufferedWriter(new FileWriter("FacultyAccounts.txt", true))) {
-            writer.write(name + "," + username + "," + password + "," + courseCode + "," + courseName);
-
-
+            writer.write(name + "," + username + "," + password + "," + courseCode + "," + courseName + "\n");
             JOptionPane.showMessageDialog(this, "Account created successfully!");
         } catch (IOException e) {
             JOptionPane.showMessageDialog(this, "Error saving to file", "Error", JOptionPane.ERROR_MESSAGE);
         }
     
+
     }//GEN-LAST:event_signUpButtonActionPerformed
 
     private void backactionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backactionActionPerformed
