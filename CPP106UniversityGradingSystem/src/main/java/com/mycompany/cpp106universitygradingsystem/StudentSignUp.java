@@ -38,8 +38,6 @@ public class StudentSignUp extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         Name = new javax.swing.JTextField();
-        Password = new javax.swing.JTextField();
-        Cpass = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         signUpButton = new javax.swing.JButton();
         backButton = new javax.swing.JButton();
@@ -47,6 +45,8 @@ public class StudentSignUp extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         StudentNumber = new javax.swing.JTextField();
         UserName = new javax.swing.JTextField();
+        Password = new javax.swing.JPasswordField();
+        Cpass = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,20 +71,6 @@ public class StudentSignUp extends javax.swing.JFrame {
         jLabel7.setText("Confirm Password:");
 
         Name.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-
-        Password.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        Password.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PasswordActionPerformed(evt);
-            }
-        });
-
-        Cpass.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        Cpass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CpassActionPerformed(evt);
-            }
-        });
 
         jLabel3.setFont(new java.awt.Font("Italic", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(51, 255, 153));
@@ -140,11 +126,11 @@ public class StudentSignUp extends javax.swing.JFrame {
                             .addComponent(jLabel7))
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(Cpass, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGap(78, 78, 78)
-                                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(Cpass, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -185,13 +171,13 @@ public class StudentSignUp extends javax.swing.JFrame {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(UserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Password, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Cpass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Cpass, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backButton, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -238,14 +224,6 @@ public class StudentSignUp extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void PasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PasswordActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_PasswordActionPerformed
-
-    private void CpassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CpassActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_CpassActionPerformed
-
     private void UserNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UserNameActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_UserNameActionPerformed
@@ -257,13 +235,28 @@ public class StudentSignUp extends javax.swing.JFrame {
         String username = UserName.getText();
         String password = Password.getText();
         String confirmPassword = Cpass.getText();
-
+        
+        if (name.isEmpty() || studentN.isEmpty() || username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()){
+            
+            JOptionPane.showMessageDialog(this,"Unable to signup due to an empty field","Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
         // Check if the passwords match
         if (!password.equals(confirmPassword)) {
             JOptionPane.showMessageDialog(this, "Passwords do not match!", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        
+        try{
+            int studentNum = Integer.parseInt((String) StudentNumber.getText());
+                    
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this,"Student Number is not an number","Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        
 
         // Save data to file
         saveToFile(name, studentN , username, password);
@@ -324,9 +317,9 @@ public class StudentSignUp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField Cpass;
+    private javax.swing.JPasswordField Cpass;
     private javax.swing.JTextField Name;
-    private javax.swing.JTextField Password;
+    private javax.swing.JPasswordField Password;
     private javax.swing.JTextField StudentNumber;
     private javax.swing.JTextField UserName;
     private javax.swing.JButton backButton;

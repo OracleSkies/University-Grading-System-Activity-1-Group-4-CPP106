@@ -17,21 +17,29 @@ import javax.swing.table.DefaultTableModel;
 public class StudentGradeView extends javax.swing.JFrame {
     
     private String studentName; // Variable to store the student's name
+    public final String getName(){
+        return studentName;
+    }
+    public void setName(String name){
+        this.studentName = name;
+    }
     /**
      * Creates new form STUDENT_VIEW
      */
     
-    public StudentGradeView(String studentName) {
-        this.studentName = studentName; // Assign the student's name
+    public StudentGradeView() {
+        //this.studentName = studentName; // Assign the student's name
         initComponents();
-        loadStudentData("grades.txt", studentName); // Load the student's data
-        jLabel5.setText("Name: " + studentName); // Display the student's name in the label
+        System.out.println(this.getName());
+        loadStudentData("grades.txt", this.getName()); // Load the student's data
+        jLabel5.setText("Name: " + this.getName()); // Display the student's name in the label
+        
     }
     
     private void loadStudentData(String filename, String studentName) {
         DefaultTableModel model = (DefaultTableModel) StudentView.getModel();
         model.setRowCount(0); // Clear existing data
-        
+    
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
             while ((line = br.readLine()) != null) {
@@ -64,7 +72,6 @@ public class StudentGradeView extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         StudentView = new javax.swing.JTable();
-        enroll_course = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         backButton = new javax.swing.JButton();
 
@@ -101,16 +108,6 @@ public class StudentGradeView extends javax.swing.JFrame {
         StudentView.setRowHeight(100);
         jScrollPane2.setViewportView(StudentView);
 
-        enroll_course.setBackground(new java.awt.Color(51, 204, 0));
-        enroll_course.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        enroll_course.setForeground(new java.awt.Color(255, 255, 255));
-        enroll_course.setText("ENROLL COURSE");
-        enroll_course.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                enroll_courseActionPerformed(evt);
-            }
-        });
-
         jLabel5.setFont(new java.awt.Font("Arial", 0, 25)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 255, 153));
         jLabel5.setText("Name:");
@@ -123,9 +120,7 @@ public class StudentGradeView extends javax.swing.JFrame {
                 .addGap(60, 60, 60)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(enroll_course, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1378, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1378, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(60, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -133,9 +128,7 @@ public class StudentGradeView extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(32, 32, 32)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(enroll_course)
-                .addGap(18, 18, 18)
+                .addGap(68, 68, 68)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(126, Short.MAX_VALUE))
         );
@@ -195,16 +188,9 @@ public class StudentGradeView extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
             
-    private void enroll_courseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enroll_courseActionPerformed
-        // TODO add your handling code here:
-         ENROLL_WINDOW course_enroll = new ENROLL_WINDOW();
-         setVisible(false);
-         course_enroll.setVisible(true);
-    }//GEN-LAST:event_enroll_courseActionPerformed
-
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
         // TODO add your handling code here:
-         lOGIN back_press = new lOGIN();
+         Login back_press = new Login();
          setVisible(false);
          back_press.setVisible(true);
     }//GEN-LAST:event_backButtonActionPerformed
@@ -248,7 +234,6 @@ public class StudentGradeView extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable StudentView;
     private javax.swing.JButton backButton;
-    private javax.swing.JButton enroll_course;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
