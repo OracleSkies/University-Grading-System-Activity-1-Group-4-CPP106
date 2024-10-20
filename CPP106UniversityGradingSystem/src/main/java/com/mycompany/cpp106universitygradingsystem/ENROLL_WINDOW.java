@@ -112,7 +112,7 @@ public class ENROLL_WINDOW extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-         STUDENT_VIEW add_course = new STUDENT_VIEW();
+         StudentGradeView add_course = new StudentGradeView();
          setVisible(false);
          add_course.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
