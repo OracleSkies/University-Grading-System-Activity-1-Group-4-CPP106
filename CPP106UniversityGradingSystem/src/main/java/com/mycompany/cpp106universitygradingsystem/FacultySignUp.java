@@ -310,13 +310,13 @@ public class FacultySignUp extends javax.swing.JFrame {
 
     private void backactionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backactionActionPerformed
         // TODO add your handling code here:
-         Login back_dunk = new Login();
+         lOGIN back_dunk = new lOGIN();
          setVisible(false);
          back_dunk.setVisible(true);
     }//GEN-LAST:event_backactionActionPerformed
     private void signUpButtonAction(java.awt.event.ActionEvent evt) {
         
-         Login signed_up = new Login();
+         lOGIN signed_up = new lOGIN();
          setVisible(false);
          signed_up.setVisible(true);
     }
