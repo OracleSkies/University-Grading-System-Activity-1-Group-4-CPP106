@@ -277,9 +277,9 @@ public class StudentSignUp extends javax.swing.JFrame {
     }//GEN-LAST:event_backButtonActionPerformed
     
      private void saveToFile(String name, String studentN, String username, String password) {
-        try (var writer = new BufferedWriter(new FileWriter("StudentAccounts.txt", true))) {
-            writer.write(name + "," + studentN + "," + username + "," + password);
-
+        try (var writer = new BufferedWriter(new FileWriter("Accounts.txt", true))) {
+            writer.write(username + "," + password  + "," + "Student" + "," + studentN   + "," + name);
+            writer.newLine();
 
             JOptionPane.showMessageDialog(this, "Account created successfully!");
         } catch (IOException e) {

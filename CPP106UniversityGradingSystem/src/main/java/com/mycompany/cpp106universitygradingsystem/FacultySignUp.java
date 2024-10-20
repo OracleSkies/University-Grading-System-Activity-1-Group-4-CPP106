@@ -297,9 +297,9 @@ public class FacultySignUp extends javax.swing.JFrame {
         saveToFile(name, username, password, courseCode, courseName);
     }
     private void saveToFile(String name, String username, String password, String courseCode, String courseName) {
-        try (var writer = new BufferedWriter(new FileWriter("FacultyAccounts.txt", true))) {
-            writer.write(name + "," + username + "," + password + "," + courseCode + "," + courseName);
-
+        try (var writer = new BufferedWriter(new FileWriter("Accounts.txt", true))) {
+            writer.write(username + "," + password  + "," + "Faculty" + "," +  courseCode + "," + courseName  + "," + name);
+            writer.newLine();
 
             JOptionPane.showMessageDialog(this, "Account created successfully!");
         } catch (IOException e) {

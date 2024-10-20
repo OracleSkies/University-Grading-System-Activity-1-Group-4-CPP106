@@ -204,38 +204,21 @@ public class Login extends javax.swing.JFrame {
                
     }//GEN-LAST:event_loginActionPerformed
     private void loginAccount(String username, String password){
-//        try(BufferedReader reader = new BufferedReader(new FileReader("StudentAccounts.txt"))){
-//            String line;
-//            line = reader.readLine();
-//            while(line != null){
-//                String[] parts = line.split(",");
-//                if(parts[0].equals(username) && parts[1].equals(password)){
-//                    System.out.println("Logged IN");
-//                    
-////                    JOptionPane.showMessageDialog(null, "Login Successful");
-//                    return;
-//                }
-//            }
-//            System.out.println("Invalid Account");
-//            //JOptionPane.showMessageDialog(null, "Invalid Account");
-//        } catch (Exception e) {
-//            // TODO: handle exception
-//            System.out.println("Error in file");
-//            //JOptionPane.showMessageDialog(null, "Error from file");
-//        }
-          try (BufferedReader reader = new BufferedReader(new FileReader("StudentAccounts.txt"))){
+
+          try (BufferedReader reader = new BufferedReader(new FileReader("Accounts.txt"))){
               String line;
-              line = reader.readLine();
-              while (line != null){
+              while ((line = reader.readLine()) != null){
+                  System.out.println(line);
                   String[] parts = line.split(",");
                   if(parts[0].equals(username) && parts[1].equals(password)){
                       System.out.println("Logged in");
+                      System.out.println(parts[2]);
                       break;
+                  } else{
+                      System.out.println("Invalid Account");
                   }
-                  System.out.println("loopcheck");
-                  System.out.println("Invalid Account");
-                  break;
-              }
+                  
+                }
           } catch (IOException e) {
               System.out.println("error");
           }
