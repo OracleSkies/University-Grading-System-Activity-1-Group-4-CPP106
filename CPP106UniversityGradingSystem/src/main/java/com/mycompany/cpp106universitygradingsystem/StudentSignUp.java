@@ -251,9 +251,17 @@ public class StudentSignUp extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Passwords do not match!", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
+        
+        if (name.isEmpty() && studentN.isEmpty() && username.isEmpty() && password.isEmpty() && confirmPassword.isEmpty()){
+            
+            JOptionPane.showMessageDialog(this,"Unable to signup due to an empty field","Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
         // Save data to file
         saveToFile(name, studentN , username, password);
+        
+        
     }//GEN-LAST:event_signUpButtonActionPerformed
 
     private void backButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backButtonActionPerformed
